@@ -7,10 +7,12 @@
 # @     "      edit? referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)"
 # @     "      edit? and "https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa"
 # @     "      edit? No longer using additional third-party application(display.exe)
+# @ 2019-02-02 edit? waitForSerialInit() From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.
 
 import win32api as win32
 import win32con
 import serial
+import serial.tools.list_ports
 import string
 import time
 from subprocess import call
@@ -24,22 +26,37 @@ def initSerial(device_Port):
 
 # Changing Screen Orientation Programmatically
 def rotateTO(rotateDic):
-   display_num = 0 # display 1
-   device = win32.EnumDisplayDevices(None,display_num)
-   dm = win32.EnumDisplaySettings(device.DeviceName,win32con.ENUM_CURRENT_SETTINGS)
-   if 0 != dm:
-       dm.PelsWidth, dm.PelsHeight = dm.PelsHeight, dm.PelsWidth
-       dm.DisplayOrientation = int(rotateDic/90)
-       iRet = win32.ChangeDisplaySettings(dm, 0);
-   if win32con.DISP_CHANGE_SUCCESSFUL != iRet:
-       print("Failed(Already) to rotate "+str(rotateDic)+" degrees")
-   return win32.ChangeDisplaySettingsEx(device.DeviceName,dm)
-# this code referred from "https://docs.microsoft.com/en-us/previous-versions/ms812499(v=msdn.10)"
+    display_num = 0 # display 1
+    device = win32.EnumDisplayDevices(None,display_num)
+    dm = win32.EnumDisplaySettings(device.DeviceName,win32con.ENUM_CURRENT_SETTINGS)
+    if 0 != dm:
+        dm.PelsWidth, dm.PelsHeight = dm.PelsHeight, dm.PelsWidth
+        dm.DisplayOrientation = int(rotateDic/90)
+        iRet = win32.ChangeDisplaySettings(dm, 0);
+    if win32con.DISP_CHANGE_SUCCESSFUL != iRet:
+        print("Failed(Already) to rotate "+str(rotateDic)+" degrees")
+    return win32.ChangeDisplaySettingsEx(device.DeviceName,dm)
+# this code referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)"
 
+serialDic={'5':'5','6':'6'}
 
 def waitForSerialInit():
-    com_Port = ["COM27"]
+    #print("\n=Currently available Arduino Uno devices=")
     while True:
+        for arduino in serial.tools.list_ports.comports():
+            if arduino.vid == 9025 and arduino.pid == 67: # Arduino Uno vid & pid
+
+                sn = arduino.serial_number
+                
+                #print("*S/N : [" + sn + "]" )
+                if sn in serialDic:
+                    print("\nConnected to serial number [" + sn + "]" )
+                    arduDev = arduino.device
+                else:
+                    arduDev = "anywhere"
+
+        com_Port = [str(arduDev)]
+
         for device_Port in com_Port:
             try:
                 serialFromArduino = initSerial(device_Port)
