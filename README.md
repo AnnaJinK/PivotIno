@@ -16,10 +16,8 @@ def waitForSerialInit():
             # This program uses the vid & pid of Adunino Uno. 
             # For this reason, you need to modify it with your device.
 ```  
-
-
-Add the shortcut to the startup program.
-C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp  
+Add the shortcut to the startup program.  
+root : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp  
 
 # Updadte
 ### 2019-01-27 
