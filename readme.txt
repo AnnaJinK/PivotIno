@@ -1,4 +1,4 @@
-#Pivotino
+Pivotino
 Display auto rotation device  
 Auto Pivot using Arduino  
 
