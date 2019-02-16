@@ -3,9 +3,7 @@
 Display auto rotation device  
 Auto Pivot using Arduino  
 
-Pivtino is a device used for monitors.  
-This device uses the serial communication between Arduino and your PC to automatically rotate the monitor screen.
-
+Pivtino automatically rotates the monitor screen through serial communication with PC.
 
 ```c
 serialDic={'5':'5','6':'6'}  # You should put your Arduino serial number in this dictionary.
