@@ -15,25 +15,6 @@ def waitForSerialInit():
             if arduino.vid == 9025 and arduino.pid == 67: # Arduino Uno vid & pid***
             # This program uses the vid & pid of Adunino Uno. 
             # For this reason, you need to modify the code to match the code you use.
-                sn = arduino.serial_number
-                
-                #print("*S/N : [" + sn + "]" )
-                if sn in serialDic:
-                    print("\nConnected to serial number [" + sn + "]" )
-                    arduDev = arduino.device
-                else:
-                    arduDev = "anywhere"
-
-        com_Port = [str(arduDev)]
-
-        for device_Port in com_Port:
-            try:
-                serialFromArduino = initSerial(device_Port)
-                print("device found on " + device_Port)
-                return serialFromArduino
-            except Exception:
-                print("Failed to device on " + device_Port)
-        time.sleep(5)
 
 ```  
 
