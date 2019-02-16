@@ -23,10 +23,9 @@ root : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 ### 2019-01-27 
 edit? baud rate and rename some variables  
 ### 2019-01-28 
-edit? import win32 using DEVMODE(Structures) add def rotateTO()  
-edit? referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)"  
-edit? and "https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa"  
-edit? No longer using additional third-party application(display.exe)  
+import win32 using DEVMODE(Structures) add def rotateTO()  
+referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)" and "https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa"  
+No longer using additional third-party application(display.exe)  
 ### 2019-02-02
 edit? waitForSerialInit() From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
 
