@@ -27,7 +27,7 @@ import win32 using DEVMODE(Structures) add def rotateTO()
 referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)" and "https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa"  
 No longer using additional third-party application(display.exe)  
 ### 2019-02-02
-edit? waitForSerialInit() From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
+waitForSerialInit() From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
 
 
 # Credits
