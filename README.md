@@ -14,8 +14,7 @@ def waitForSerialInit():
         for arduino in serial.tools.list_ports.comports():
             if arduino.vid == 9025 and arduino.pid == 67: # Arduino Uno vid & pid
             # This program uses the vid & pid of Adunino Uno. 
-            # For this reason, you need to modify the code to match the code you use.
-
+            # For this reason, you need to modify your code to match your device.
 ```  
 
 
