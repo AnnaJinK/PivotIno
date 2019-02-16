@@ -18,7 +18,6 @@ def waitForSerialInit():
 
 ```  
 
-You can use the serial number after you modify it with your device.  
 
 Add the shortcut to the startup program.
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp  
