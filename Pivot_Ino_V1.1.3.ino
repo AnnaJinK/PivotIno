@@ -1,5 +1,5 @@
 /* 
-|| @ file Pivot_Ino_V1.1.1.ino
+|| @ file Pivot_Ino_V1.1.3.ino
 || @ author Heejoong 
 || # 2019-01-16 ~
 || @ 2019-01-27 edit? baud rate and rename some variables
