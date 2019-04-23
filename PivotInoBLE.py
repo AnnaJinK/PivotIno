@@ -101,13 +101,14 @@ while True:
             print("Display rotate to : " + rotateDic[direction])
             
             rotateTO(int(rotateDic[direction]))
-            # Changing Screen Using display.exe
             '''
-            command = "C:\Rotate\display.exe /rotate:" + rotateDic[direction]
-            print("running: " + command)
-            call(command, shell=True)
+            # ======================[No longer used]===========================#
+            # Changing Screen Using display.exe                                #
+            # command = "C:\Rotate\display.exe /rotate:" + rotateDic[direction]#
+            # print("running: " + command)                                     #
+            # call(command, shell=True)                                        #
+            # "http://noeld.com/programs.asp?cat=misc#Display"=================#
             '''
-            # "http://noeld.com/programs.asp?cat=misc#Display"
         else:
             print("invalid direction: " + direction)
             print("ignoring")
