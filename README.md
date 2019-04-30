@@ -7,11 +7,11 @@ Auto Pivot using Arduino
 
 Pivtino automatically rotates the display screen through serial communication with PC.
 
-Python
-### pip install pyserial
-### pip install pypiwin32
+### Required Python Library 
+pip install pyserial
+pip install pypiwin32
 
-Hardware
+### Used hardware
 BlunoBeetle or 
 Arduino Pro Mini 3.3v, MPU6050, HC-06
 
