@@ -12,7 +12,7 @@ pip install pyserial
 pip install pypiwin32  
 
 ### Used hardware
-BlunoBeetle or  
+BlunoBeetle, MPU6050 or  
 Arduino Pro Mini 3.3v, MPU6050, HC-06
 
 ```c
