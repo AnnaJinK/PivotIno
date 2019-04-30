@@ -3,6 +3,8 @@
 Display auto rotation device  
 Auto Pivot using Arduino  
 
+![pivotinogif1](https://user-images.githubusercontent.com/34006003/56954299-6ae33200-6b79-11e9-8809-79b16fbc414e.gif)
+
 Pivtino automatically rotates the display screen through serial communication with PC.
 
 ```c
