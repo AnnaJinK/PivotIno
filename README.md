@@ -1,4 +1,4 @@
-# Pivotino
+# PivotIno
 
 Display auto rotation device  
 Auto Pivot using Arduino  
@@ -28,7 +28,8 @@ referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msd
 No longer using additional third-party application(display.exe)  
 ### 2019-02-02
 From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
-
+### 2019-04-30
+Added Arduino Pro Mini version of PivotIno. There is not much change in source code.
 
 # Credits
 Changes were made by Heejoong Kim (in 2019) 
