@@ -33,7 +33,22 @@ root : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 ### 2019-01-27 
 edit? baud rate and rename some variables  
 ### 2019-01-28 
-import win32 using [DEVMODE(Structures)](https://docs.microsoft.com/en-us/windows/desktop/api/wingdi/ns-wingdi-_devicemodea) add def rotateTO()  
+import win32 using [DEVMODE(Structures)](https://docs.microsoft.com/en-us/windows/desktop/api/wingdi/ns-wingdi-_devicemodea) add def rotateTO() 
+
+```c
+# Changing Screen Orientation Programmatically
+def rotateTO(rotateDic):
+    display_num = 0 # display 1
+    device = win32.EnumDisplayDevices(None,display_num)
+    dm = win32.EnumDisplaySettings(device.DeviceName,win32con.ENUM_CURRENT_SETTINGS)
+    if 0 != dm:
+        dm.PelsWidth, dm.PelsHeight = dm.PelsHeight, dm.PelsWidth
+        dm.DisplayOrientation = int(rotateDic/90)
+        iRet = win32.ChangeDisplaySettings(dm, 0);
+    if win32con.DISP_CHANGE_SUCCESSFUL != iRet:
+        print("Failed(Already) to rotate "+str(rotateDic)+" degrees")
+return win32.ChangeDisplaySettingsEx(device.DeviceName,dm)
+```
 referred from [Changing Screen Orientation Programmatically](https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)) and [ChangeDisplaySettingsExA function](https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa)  
 No longer using additional third-party application(display.exe)  
 ### 2019-02-02
