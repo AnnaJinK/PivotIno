@@ -40,7 +40,8 @@ No longer using additional third-party application(display.exe)
 From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
 ### 2019-04-30
 Added Arduino Pro Mini version of PivotIno. There is not much change in source code.  
-[Blog]:https://annajin28.blogspot.com/2019/04/arduino.html "Arduino Pro Mini version"
+[Blog](https://annajin28.blogspot.com/2019/04/arduino.html)
+
 # Credits
 Changes were made by Heejoong Kim (in 2019) 
 
