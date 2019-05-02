@@ -56,7 +56,7 @@ From now on, waitForSerialInit () function will automatically find the Arduino U
 ### 2019-04-30
 Added [Arduino Pro Mini](https://annajin28.blogspot.com/2019/04/arduino.html) version of PivotIno. There is not much change in source code.  
 ### 2019-05-02 
-Added def macAddfinder(): This function finds the COM port using the MAC address of the Bluetooth module.
+Added def macAddfinder(): This function finds com-port using MAC-address of the Bluetooth module.
 ```c
 def macAddfinder():
     dev = serial.tools.list_ports.comports()
