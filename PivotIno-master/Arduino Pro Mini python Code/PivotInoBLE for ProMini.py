@@ -37,9 +37,21 @@ def rotateTO(rotateDic):
     return win32.ChangeDisplaySettingsEx(device.DeviceName,dm)
 # this code referred from "https://docs.microsoft.com/ko-kr/previous-versions/ms812499(v=msdn.10)"
 
+# Find the COM port using the MAC address of the Bluetooth module. (HC-06)
+def macAddfinder():
+    dev = serial.tools.list_ports.comports()
+    port=[]
+    for com in dev:
+            port.append((com.device, com.hwid))
+    macAddress = "201807130C23"  # MAC Address of HC-06 module
+    for device in port:
+        if macAddress in str(device[1]):
+            result= str(device[0])
+    #print("\nBluetooth MAC Address is [" + macAddress + "]\nDevice detected serial ports:")
+    return result
 
 def waitForSerialInit():
-    com_Port = ["COM7"]
+    com_Port = [macAddfinder()]
     while True:
         for device_Port in com_Port:
             try:
