@@ -55,6 +55,22 @@ No longer using additional third-party application(display.exe)
 From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.  
 ### 2019-04-30
 Added [Arduino Pro Mini](https://annajin28.blogspot.com/2019/04/arduino.html) version of PivotIno. There is not much change in source code.  
+### 2019-05-02 
+Added def macAddfinder(): This function finds the COM port using the MAC address of the Bluetooth module.
+```c
+def macAddfinder():
+    dev = serial.tools.list_ports.comports()
+    port=[]
+    for com in dev:
+            port.append((com.device, com.hwid))
+    macAddress = "201807130C23"
+    for device in port:
+        if macAddress in str(device[1]):
+            result= str(device[0])
+    #print("\nBluetooth MAC Address is [" + macAddress + "]\nDevice detected serial ports:")
+    return result
+```
+It will be merged with other functions. Because of delay :(
 
 # Credits
 Changes were made by Heejoong Kim (in 2019) 
