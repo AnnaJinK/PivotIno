@@ -8,8 +8,10 @@
 # @     "      edit? and "https://docs.microsoft.com/ko-kr/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa"
 # @     "      edit? No longer using additional third-party application(display.exe)
 # @ 2019-02-02 edit? waitForSerialInit() From now on, waitForSerialInit () function will automatically find the Arduino Uno devices.
-# @ 2019-04-30 this program for Arduino Pro Mini 3.3v This device communicates using Bluetooth. Therefore, com_port search function(using S/N) has been removed. ('^ ';)
- 
+# @ 2019-04-30 edit? this program for Arduino Pro Mini 3.3v This device communicates using Bluetooth. Therefore, com_port search function(using S/N) has been removed. ('^ ';)
+# @ 2019-05-02 edit? Added def macAddfinder(): This function finds the COM port using the MAC address of the Bluetooth module.
+# @     "      edit? It will be merged with other functions. Because of delay :(
+
 import win32api as win32
 import win32con
 import serial
